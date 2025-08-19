@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tamizhi/components/margin.dart';
 import 'package:tamizhi/theme/colors.dart';
@@ -106,7 +107,10 @@ class HomeScreen extends StatelessWidget {
                         icon: Iconsax.magicpen,
                         title: "Metaphor Classifier",
                         buttonText: "Generate",
-                        onTap: () {},
+                        onTap: () {
+                          print("Navigating to Metaphor Classifier");
+                          context.push('/metaphor-classifier');
+                        },
                       ),
                       SizedBox(height: 16),
                       MetaphorCard(
