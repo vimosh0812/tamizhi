@@ -53,11 +53,14 @@ class _CustomTextInputState extends State<CustomTextInput> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: Dimens.defaultMarginB),
-        Text(
-          widget.labelText ?? '',
-          style: AppTextStyles.body2.copyWith(fontWeight: FontWeight.w500),
-        ),
-        const SizedBox(height: 12),
+        if (widget.labelText != null)
+          ...[
+            Text(
+              widget.labelText!,
+              style: AppTextStyles.body2.copyWith(fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(height: 12),
+          ],
         TextFormField(
           initialValue: widget.controller == null ? widget.initialValue : null,
           validator: widget.validator,
@@ -68,7 +71,7 @@ class _CustomTextInputState extends State<CustomTextInput> {
           onChanged: widget.onChanged,
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
-
+          
           style: AppTextStyles.body2,
           onTapOutside: (event) => FocusScope.of(context).unfocus(),
           decoration: InputDecoration(

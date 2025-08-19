@@ -35,7 +35,7 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       surfaceTintColor: Colors.transparent,
-      backgroundColor: backgroundColor ?? AppColors.orange.shade50,
+      // backgroundColor: backgroundColor ?? AppColors.orange.shade50,
       elevation: 0,
       centerTitle: true,
       title: Text(
@@ -64,7 +64,7 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.only(right: Dimens.defaultMarginB),
             child: CustomIconButton(
               icon: actionIcon ?? Iconsax.more,
-              iconColor: AppColors.orange,
+              iconColor: AppColors.black,
               backgroundColor: AppColors.white,
               borderColor: AppColors.orange.shade200,
               size: Dimens.iconSizeL,
